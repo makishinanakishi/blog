@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客文章 - 我的博客</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">我的博客</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html" class="active">博客</a></li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="contact.html">联系</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <path
+                                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                            </path>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content blog-page">
+
+        <article class="article-detail" id="articleDetail">
+            <header class="article-header">
+                <h1 id="articleTitle">CSS Grid 布局完全指南</h1>
+                <div class="article-meta">
+                    <span class="date" id="articleDate">2025年1月15日</span>
+                    <span class="tag" id="articleTag">前端</span>
+                </div>
+            </header>
+
+            <div class="article-content" id="articleContent">
+                <p>CSS Grid 是一个强大的二维布局系统，它可以同时处理行和列，使得复杂的网页布局变得简单直观。本文将带你深入了解 CSS Grid 的核心概念和实际应用。</p>
+
+                <h2>什么是 CSS Grid？</h2>
+                <p>CSS Grid Layout（网格布局）是 CSS 中最强大的布局系统。它是一个二维系统，这意味着它可以同时处理列和行，不像 Flexbox 主要是一维系统。</p>
+
+                <h2>基本概念</h2>
+                <h3>网格容器（Grid Container）</h3>
+                <p>通过将 <code>display: grid</code> 或 <code>display: inline-grid</code> 应用于元素来创建网格容器。该元素的所有直接子元素将成为网格项目。
+                </p>
+                <h3>网格轨道（Grid Track）</h3>
+                <p>网格轨道是网格中两条相邻线之间的空间。可以使用 <code>grid-template-columns</code> 和 <code>grid-template-rows</code>
+                    属性定义轨道大小。</p>
+                <h2>总结</h2>
+                <p>CSS Grid 是现代网页布局的利器，掌握它可以让你的布局工作事半功倍。建议多加练习，熟悉各种属性的用法。</p>
+            </div>
+        </article>
+
+
+        <section class="comments-section">
+            <h3>评论区</h3>
+            <form class="comment-form" id="commentForm">
+                <div class="form-group">
+                    <label for="commenterName">昵称 *</label>
+                    <input type="text" id="commenterName" required placeholder="请输入昵称">
+                </div>
+                <div class="form-group">
+                    <label for="commentContent">评论内容 *</label>
+                    <textarea id="commentContent" required placeholder="请输入评论内容（最多500字）" maxlength="500"></textarea>
+                    <span class="char-count"><span id="charCount">0</span>/500</span>
+                </div>
+                <button type="submit" class="btn-primary" id="submitComment">发表评论</button>
+            </form>
+            <div class="comments-list" id="commentsList">
+
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 我的博客. 保留所有权利.</p>
+            <div class="social-links">
+                <a href="#" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
